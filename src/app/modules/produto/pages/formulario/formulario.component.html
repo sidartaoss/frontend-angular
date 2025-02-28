@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>{{ data.id ? 'Editar Produto' : 'Novo Produto' }}</h2>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Descrição</mat-label>
+      <input matInput formControlName="descricao">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Preço</mat-label>
+      <input matInput type="number" formControlName="preco" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="categoriaId" required>
+        <mat-option *ngFor="let cat of categorias" [value]="cat.id">
+          {{ cat.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="dialogRef.close()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+</div>

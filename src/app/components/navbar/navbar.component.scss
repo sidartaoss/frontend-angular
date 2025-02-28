@@ -1,0 +1,23 @@
+.sidenav-container {
+    height: 100vh;
+  }
+  
+  mat-toolbar {
+    height: 36px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+mat-sidenav {
+    padding-top: 20px; 
+}
+
+mat-nav-list {
+    padding-top: 20px; 
+}
+
+mat-list-item {
+    margin-top: 10px;
+}
